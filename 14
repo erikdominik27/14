@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int count(char str[]);
+
+int main() 
+{
+    char str[100];  
+    int vowels;
+    printf("Enter a string: ");
+    scanf("%[^\n]s", str); 
+    vowels = count(str);
+    printf("The number of vowels in the string is: %d", vowels);
+}
+
+int count(char str[]) {
+    int count=0;
+   for (int i = 0; str[i] != '\0'; i++) {
+        switch (str[i]) {
+            case 'a':
+            case 'e':
+            case 'i':
+            case 'o':
+            case 'u':
+             count++;  
+                break;
+            default:
+                break;  
+        }
+    }
+
+    return count;  
+}
